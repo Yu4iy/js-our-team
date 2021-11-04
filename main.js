@@ -44,23 +44,16 @@ const teamCard = [
 
 
 ]
-console.log(teamCard)
 
 // 2.Individuare container nel quale inserire card generati
 const container = document.querySelector('.team-container')
 container.innerHTML=''
 
 // 3.  generare markup
-genMarkup(teamCard, container)
+genMarkup(0, teamCard, container)
 
-// 4.Individuare input 
 
-let nameIput = document.querySelector('#name')
-let roleIput = document.querySelector('#role')
-let imgIput = document.querySelector('#image')
-console.log(nameIput)
-console.log(roleIput)
-console.log(imgIput)
+
 
 // 5.Individuare button  
 
@@ -69,59 +62,31 @@ const addBtn = document.querySelector('#addMemberButton')
 
 // 6. Creare un evento
 addBtn.addEventListener('click', function() {
-	const namein = nameIput.value
-	const rolein = roleIput.value
-	const imgin =imgIput.value
+	// 4.Individuare input 
+	const namein = document.querySelector('#name')	
+	const rolein = document.querySelector('#role')
+	const imgin =document.querySelector('#image')
+	
 	const newMember = {
-		img:imgin,
-		name:namein,
-		role:rolein,
+		img:imgin.value,
+		name:namein.value,
+		role:rolein.value,
 }
 
 teamCard.push(newMember)
-console.log(teamCard);
-console.log(teamCard[6]);
 
-for(let i = teamCard.length - 1; i < teamCard.length; i++){
-	const card = teamCard[i]
-	container.innerHTML += 
-	`
-	<div class="team-card">
-				<div class="card-image">
-				  <img
-					 src="img/${card.img}"
-					 alt="${card.name}"
-				  />
-				</div>
-				<div class="card-text">
-				  <h3>${card.name}</h3>
-				  <p>${card.role}</p>
-				</div>
-			 </div>
-	`
+genMarkup(teamCard.length - 1, teamCard, container)
 
-}
 
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
 // FUUNCTIONS
 
-function genMarkup(teamCardF, containerF){
-	for(let i = 0; i < teamCardF.length; i++){
+function genMarkup( base, teamCardF, cont){
+	for(let i = base ; i < teamCardF.length; i++){
 		const card = teamCardF[i]
-		container.innerHTML += 
+		cont.innerHTML += 
 		`
 		<div class="team-card">
 					<div class="card-image">
