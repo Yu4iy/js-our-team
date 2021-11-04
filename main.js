@@ -53,8 +53,14 @@ container.innerHTML=''
 // 3.  generare markup
 genMarkup(teamCard, container)
 
+// 4.Individuare input 
+const nameIput = document.querySelector('#name').value
+const roleIput = document.querySelector('#role').value
+const imgIput = document.querySelector('#image').value
 
-
+console.log(nameIput)
+console.log(roleIput)
+console.log(imgIput)
 
 
 
