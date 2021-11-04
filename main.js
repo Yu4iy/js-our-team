@@ -22,10 +22,26 @@ const teamCard = [
 		role:'Chief Editor',
 	},
 	{
+		img:'barbara-ramos-graphic-designer.jpg',
+		name:'barbara-ramos',
+		role:'graphic-designer',
+	},
+	{
+		img:'scott-estrada-developer.jpg',
+		name:'scott-estrada',
+		role:'developer',
+	},
+	{
 		img:'angela-lopez-social-media-manager.jpg',
 		name:'angela-lopez',
-		role:'media-manager',
+		role:'social-media-manager',
 	},
+	{
+		img:'walter-gordon-office-manager.jpg',
+		name:'walter-gordon',
+		role:'office-manager',
+	},
+
 
 ]
 console.log(teamCard)
