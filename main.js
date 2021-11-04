@@ -54,10 +54,10 @@ container.innerHTML=''
 genMarkup(teamCard, container)
 
 // 4.Individuare input 
-const nameIput = document.querySelector('#name').value
-const roleIput = document.querySelector('#role').value
-const imgIput = document.querySelector('#image').value
 
+let nameIput = document.querySelector('#name')
+let roleIput = document.querySelector('#role')
+let imgIput = document.querySelector('#image')
 console.log(nameIput)
 console.log(roleIput)
 console.log(imgIput)
@@ -69,10 +69,13 @@ const addBtn = document.querySelector('#addMemberButton')
 
 // 6. Creare un evento
 addBtn.addEventListener('click', function() {
+	const namein = nameIput.value
+	const rolein = roleIput.value
+	const imgin =imgIput.value
 	const newMember = {
-		img:imgIput,
-		name:nameIput,
-		role:roleIput,
+		img:imgin,
+		name:namein,
+		role:rolein,
 }
 
 teamCard.push(newMember)
