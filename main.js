@@ -62,10 +62,44 @@ console.log(nameIput)
 console.log(roleIput)
 console.log(imgIput)
 
+// 5.Individuare button  
+
+const addBtn = document.querySelector('#addMemberButton')
 
 
+// 6. Creare un evento
+addBtn.addEventListener('click', function() {
+	const newMember = {
+		img:imgIput,
+		name:nameIput,
+		role:roleIput,
+}
 
+teamCard.push(newMember)
+console.log(teamCard);
+console.log(teamCard[6]);
 
+for(let i = teamCard.length - 1; i < teamCard.length; i++){
+	const card = teamCard[i]
+	container.innerHTML += 
+	`
+	<div class="team-card">
+				<div class="card-image">
+				  <img
+					 src="img/${card.img}"
+					 alt="${card.name}"
+				  />
+				</div>
+				<div class="card-text">
+				  <h3>${card.name}</h3>
+				  <p>${card.role}</p>
+				</div>
+			 </div>
+	`
+
+}
+
+})
 
 
 
