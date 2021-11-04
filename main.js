@@ -33,24 +33,50 @@ console.log(teamCard)
 // 2.Individuare container nel quale inserire card generati
 const container = document.querySelector('.team-container')
 container.innerHTML=''
+
 // 3.  generare markup
-for(let i = 0; i < teamCard.length; i++){
-	const card = teamCard[i]
-	container.innerHTML += 
-	`
-	<div class="team-card">
-            <div class="card-image">
-              <img
-                src="img/${card.img}"
-                alt="${card.name}"
-              />
-            </div>
-            <div class="card-text">
-              <h3>${card.name}</h3>
-              <p>${card.role}</p>
-            </div>
-          </div>
-	`
+genMarkup(teamCard, container)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FUUNCTIONS
+
+function genMarkup(teamCardF, containerF){
+	for(let i = 0; i < teamCardF.length; i++){
+		const card = teamCardF[i]
+		container.innerHTML += 
+		`
+		<div class="team-card">
+					<div class="card-image">
+					  <img
+						 src="img/${card.img}"
+						 alt="${card.name}"
+					  />
+					</div>
+					<div class="card-text">
+					  <h3>${card.name}</h3>
+					  <p>${card.role}</p>
+					</div>
+				 </div>
+		`
+	
+	}
 }
-
