@@ -29,3 +29,9 @@ const TeamCard = [
 
 ]
 console.log(TeamCard)
+
+// 2.Individuare container nel quale inserire card generati
+const container = document.querySelector('.team-container')
+
+// 3.  generare markup
+ 
