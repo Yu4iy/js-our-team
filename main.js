@@ -10,28 +10,47 @@
 
 
 // 1.Creare la struttura di dati per TeamCard
-const TeamCard = [
+const teamCard = [
 	{
-		img:"img/wayne-barnett-founder-ceo.jpg",
+		img:"wayne-barnett-founder-ceo.jpg",
 		name:'Wayne Barnett',
 		role:'Founder & CEO',
 	},
 	{
-		img:"img/angela-caroll-chief-editor.jpg",
+		img:"angela-caroll-chief-editor.jpg",
 		name:'Angela Caroll',
 		role:'Chief Editor',
 	},
 	{
-		img:"img/angela-lopez-social-media-manager.jpg",
+		img:'angela-lopez-social-media-manager.jpg',
 		name:'angela-lopez',
 		role:'media-manager',
 	},
 
 ]
-console.log(TeamCard)
+console.log(teamCard)
 
 // 2.Individuare container nel quale inserire card generati
 const container = document.querySelector('.team-container')
-
+container.innerHTML=''
 // 3.  generare markup
- 
+for(let i = 0; i < teamCard.length; i++){
+	const card = teamCard[i]
+	container.innerHTML += 
+	`
+	<div class="team-card">
+            <div class="card-image">
+              <img
+                src="img/${card.img}"
+                alt="${card.name}"
+              />
+            </div>
+            <div class="card-text">
+              <h3>${card.name}</h3>
+              <p>${card.role}</p>
+            </div>
+          </div>
+	`
+
+}
+
